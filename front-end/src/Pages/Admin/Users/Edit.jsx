@@ -48,7 +48,7 @@ const Edit = () => {
     const getCategoryData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:9002/api/users/${userID}`
+          `https://mushy-pike-button.cyclic.app/api/users/${userID}`
         );
 
         if (response.status === 200) {
@@ -85,7 +85,7 @@ const Edit = () => {
 
     try {
       const data = await axios.put(
-        `http://localhost:9002/api/users/${userID}`,
+        `https://mushy-pike-button.cyclic.app/api/users/${userID}`,
         state
       );
       console.log(data);

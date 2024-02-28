@@ -35,7 +35,7 @@ const reducer = (state, action) => {
 const fetchData = async (orderId) => {
   try {
     const result = await axios.get(
-      `http://localhost:9002/api/orderDeatils/${orderId}`
+      `https://mushy-pike-button.cyclic.app/api/orderDeatils/${orderId}`
     );
     const data = result.data;
     return data;

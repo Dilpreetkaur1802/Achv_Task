@@ -54,7 +54,10 @@ const Add = () => {
     }
 
     try {
-      const data = await axios.post(`http://localhost:9002/api/users/`, state);
+      const data = await axios.post(
+        `https://mushy-pike-button.cyclic.app/api/users/`,
+        state
+      );
       if (data.status === 200) {
         toast.success("User Added");
         setTimeout(() => {

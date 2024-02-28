@@ -22,25 +22,27 @@ export default function Dashboard() {
     }
     try {
       axios
-        .get("http://localhost:9002/api/users")
+        .get("https://mushy-pike-button.cyclic.app/api/users")
         .then((resp) => {
           if (resp.status === 200) {
             setUsers(resp.data.total);
 
             axios
-              .get("http://localhost:9002/api/products")
+              .get("https://mushy-pike-button.cyclic.app/api/products")
               .then((resp) => {
                 if (resp.status === 200) {
                   setProducts(resp.data.total);
 
                   axios
-                    .get("http://localhost:9002/api/category")
+                    .get("https://mushy-pike-button.cyclic.app/api/category")
                     .then((resp) => {
                       if (resp.status === 200) {
                         setCats(resp.data.total);
 
                         axios
-                          .get("http://localhost:9002/api/orderList")
+                          .get(
+                            "https://mushy-pike-button.cyclic.app/api/orderList"
+                          )
                           .then((resp) => {
                             if (resp.status === 200) {
                               setOrders(resp.data.data.length);

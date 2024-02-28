@@ -71,7 +71,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:9002/api/users/",
+        "https://mushy-pike-button.cyclic.app/api/users/",
         state
       );
 

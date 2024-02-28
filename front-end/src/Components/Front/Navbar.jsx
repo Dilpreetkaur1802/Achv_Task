@@ -37,7 +37,9 @@ const reducer = (state, action) => {
 
 const fetchData = async (page) => {
   try {
-    const result = await axios.get(`http://localhost:9002/api/category`);
+    const result = await axios.get(
+      `https://mushy-pike-button.cyclic.app/api/category`
+    );
     const data = result.data;
     return data;
   } catch (err) {

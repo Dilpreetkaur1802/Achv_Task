@@ -41,7 +41,9 @@ const reducer = (state, action) => {
 
 const fetchData = async (page) => {
   try {
-    const result = await axios.get(`http://localhost:9002/api/products`);
+    const result = await axios.get(
+      `https://mushy-pike-button.cyclic.app/api/products`
+    );
     const data = result.data;
     return data;
   } catch (err) {
@@ -73,7 +75,7 @@ const Home = () => {
       return;
     }
     await axios
-      .delete(`http://localhost:9002/api/products/${categoryID}`)
+      .delete(`https://mushy-pike-button.cyclic.app/api/products/${categoryID}`)
       .then((response) => {
         if (response.status === 200) {
           toast.success("Product deleted Successfully!");

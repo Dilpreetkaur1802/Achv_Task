@@ -49,7 +49,7 @@ export default function Home() {
   const fetchData = async (pageNumber = 0) => {
     try {
       const result = await axios.get(
-        `http://localhost:9002/api/home/productswPage?page=${pageNumber}`
+        `https://mushy-pike-button.cyclic.app/api/home/productswPage?page=${pageNumber}`
       );
       if (result.status === 200) {
         const data = result.data;

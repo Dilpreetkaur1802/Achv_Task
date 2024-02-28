@@ -50,7 +50,7 @@ export default function Description() {
     const fetchData = async () => {
       try {
         const result = await axios.get(
-          `http://localhost:9002/api/home/products/${productId}`
+          `https://mushy-pike-button.cyclic.app/api/home/products/${productId}`
         );
         if (result.status === 200) {
           const data = result.data;
@@ -127,7 +127,7 @@ export default function Description() {
 
     // creating an order
     const orderResult = await axios.post(
-      "http://localhost:9002/api/orders",
+      "https://mushy-pike-button.cyclic.app/api/orders",
       data
     );
 
@@ -157,7 +157,7 @@ export default function Description() {
         };
 
         const result = await axios
-          .post("http://localhost:9002/api/success", paymentData)
+          .post("https://mushy-pike-button.cyclic.app/api/success", paymentData)
           .then((response) => {
             if (response.status === 200) {
               toast.success("Order Placed Successfully!");

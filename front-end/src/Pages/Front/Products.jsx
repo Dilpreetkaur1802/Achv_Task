@@ -49,7 +49,7 @@ const Products = () => {
 
       try {
         const result = await axios.get(
-          `http://localhost:9002/api/home/productwc/${categoryId}`
+          `https://mushy-pike-button.cyclic.app/api/home/productwc/${categoryId}`
         );
         if (result.status === 200) {
           const data = result.data;

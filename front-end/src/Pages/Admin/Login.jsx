@@ -55,7 +55,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:9002/api/admin/login",
+        "https://mushy-pike-button.cyclic.app/api/admin/login",
         state
       );
 

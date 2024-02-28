@@ -55,7 +55,9 @@ const Add = () => {
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const result = await axios.get("http://localhost:9002/api/category");
+        const result = await axios.get(
+          "https://mushy-pike-button.cyclic.app/api/category"
+        );
         if (result.status === 200) {
           setCategoryData(result.data.data);
         } else {
@@ -103,7 +105,7 @@ const Add = () => {
       formData.append("category", state.category);
 
       const data = await axios.post(
-        "http://localhost:9002/api/products/",
+        "https://mushy-pike-button.cyclic.app/api/products/",
         formData
       );
       if (data.status === 200) {
@@ -197,7 +199,7 @@ const Add = () => {
                 onChange={handleImageChange}
               />
             </div>
-            
+
             <div className="mb-5">
               <button
                 type="submit"

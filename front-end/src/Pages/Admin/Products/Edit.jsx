@@ -64,7 +64,7 @@ const Edit = () => {
     const getProductData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:9002/api/products/${productId}`
+          `https://mushy-pike-button.cyclic.app/api/products/${productId}`
         );
 
         if (response.status === 200) {
@@ -99,7 +99,9 @@ const Edit = () => {
     };
     const getCategories = async () => {
       try {
-        const result = await axios.get("http://localhost:9002/api/category");
+        const result = await axios.get(
+          "https://mushy-pike-button.cyclic.app/api/category"
+        );
         if (result.status === 200) {
           setCategoryData(result.data.data);
         } else {
@@ -148,7 +150,7 @@ const Edit = () => {
       formData.append("category", state.category);
 
       const data = await axios.put(
-        `http://localhost:9002/api/products/${productId}`,
+        `https://mushy-pike-button.cyclic.app/api/products/${productId}`,
         formData
       );
       if (data.status === 200) {

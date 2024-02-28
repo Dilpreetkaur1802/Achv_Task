@@ -54,7 +54,7 @@ const Add = () => {
 
     try {
       const data = await axios.post(
-        "http://localhost:9002/api/category/",
+        "https://mushy-pike-button.cyclic.app/api/category/",
         state
       );
       if (data.status === 200) {
