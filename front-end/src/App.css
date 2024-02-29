@@ -28,6 +28,8 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #a4846d;
+  width: 30px;
+  text-align: center;
 }
 
 .pagination .active {

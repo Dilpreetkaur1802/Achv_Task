@@ -1,6 +1,7 @@
 import React, { useReducer, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Skeleton from "react-loading-skeleton";
 
 const initialState = {
   loading: true,
@@ -71,7 +72,7 @@ export default function Navbar() {
           {state.data.map((category) => (
             <li className="text-white" key={category._id}>
               <Link to={`/products?categoryId=${category._id}`}>
-                {category.name}
+                {category.name || <Skeleton />}
               </Link>
             </li>
           ))}

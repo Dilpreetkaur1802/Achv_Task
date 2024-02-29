@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useReducer, useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -190,7 +191,7 @@ export default function Description() {
     localStorage.removeItem("userToken");
     window.location.reload();
   };
-
+  console.log(state);
   return (
     <div className="h-fit">
       <header className="p-4 md:px-12 md:py-4">
@@ -229,18 +230,26 @@ export default function Description() {
       </div>
       <div className="container grid grid-cols-1 md:grid-cols-2 space-x-8 h-screen">
         <div className="h-screen">
-          <img
-            src={state.data.file}
-            alt=""
-            className="w-[100%] object-contain h-[500px] my-4 md:my-8 xl:my-14 mx-auto"
-          />
+          {state.loading ? (
+            <Skeleton height={220} className="my-4 md:my-8 xl:my-14 mx-auto" />
+          ) : (
+            <img
+              src={state.data.file}
+              alt=""
+              className="w-[100%] object-contain h-[500px] my-4 md:my-8 xl:my-14 mx-auto"
+            />
+          )}
         </div>
         <div className="h-fit my-4 md:my-8 xl:my-14">
-          <h1 className="my-auto text-[40px] font-[700]">{state.data.name}</h1>
+          <h1 className="my-auto text-[40px] font-[700]">
+            {state.data.name || <Skeleton />}
+          </h1>
           <p className="text-[#A4846D] text-xl font-bold">
-            Rs {state.data.price}.00
+            Rs {state.data.price || <Skeleton />}.00
           </p>
-          <p className="my-4 md:my-8 ">{state.data.description}</p>
+          <p className="my-4 md:my-8 ">
+            {state.data.description || <Skeleton />}
+          </p>
           <h4 className="font-bold">
             Available:{" "}
             <span

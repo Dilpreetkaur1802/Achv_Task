@@ -18,31 +18,34 @@ import EditCategory from "./Pages/Admin/Categories/Edit";
 import ProductHome from "./Pages/Admin/Products/Home";
 import AddProducts from "./Pages/Admin/Products/Add";
 import EditProducts from "./Pages/Admin/Products/Edit";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index path="/" element={<Home />} />
-        <Route path="/details" element={<Description />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/login" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/admin/login" element={<Login />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
-        <Route path="/admin/products" element={<ProductHome />} />
-        <Route path="/admin/addproducts" element={<AddProducts />} />
-        <Route path="/admin/editproducts" element={<EditProducts />} />
-        <Route path="/admin/categories" element={<CategoriesHome />} />
-        <Route path="/admin/addcategories" element={<AddCategory />} />
-        <Route path="/admin/editcategories" element={<EditCategory />} />
-        <Route path="/admin/users" element={<UserHome />} />
-        <Route path="/admin/addusers" element={<AddUser />} />
-        <Route path="/admin/editusers" element={<UserEdit />} />
-        <Route path="/admin/orders" element={<OrdersHome />} />
-        <Route path="/admin/orderdetails" element={<Details />} />
-      </Routes>
-    </BrowserRouter>
+    <SkeletonTheme baseColor="#e3e3e3" highlightColor="#fff">
+      <BrowserRouter>
+        <Routes>
+          <Route index path="/" element={<Home />} />
+          <Route path="/details" element={<Description />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/login" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/products" element={<ProductHome />} />
+          <Route path="/admin/addproducts" element={<AddProducts />} />
+          <Route path="/admin/editproducts" element={<EditProducts />} />
+          <Route path="/admin/categories" element={<CategoriesHome />} />
+          <Route path="/admin/addcategories" element={<AddCategory />} />
+          <Route path="/admin/editcategories" element={<EditCategory />} />
+          <Route path="/admin/users" element={<UserHome />} />
+          <Route path="/admin/addusers" element={<AddUser />} />
+          <Route path="/admin/editusers" element={<UserEdit />} />
+          <Route path="/admin/orders" element={<OrdersHome />} />
+          <Route path="/admin/orderdetails" element={<Details />} />
+        </Routes>
+      </BrowserRouter>
+    </SkeletonTheme>
   );
 }
 
